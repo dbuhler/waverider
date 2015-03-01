@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8E52A215-9322-4A3A-BBF0-04EE93728FA0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WaveriderGUI</RootNamespace>
+    <AssemblyName>WaveriderGUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Panels\FreqDomain.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panels\TimeDomain.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panels\GraphicsPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SamplingRateItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WaveDrawer.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecordDialog.Designer.cs">
+      <DependentUpon>RecordDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaveFiles.cs" />
+    <Compile Include="WavePlayer.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecordDialog.resx">
+      <DependentUpon>RecordDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Waverider\Waverider.csproj">
+      <Project>{708e39bb-001b-4e86-9f45-3a81376a88c8}</Project>
+      <Name>Waverider</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\record16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomfit16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomout16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomin16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\record24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoommax16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fourier16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
